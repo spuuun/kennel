@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from './home/Home'
-import AnimalCard from './animal/AnimalCard'
+// import AnimalCard from './animal/AnimalCard'
 //only include these once they are built - previous practice exercise
 import LocationCard from './location/LocationCard'
 import EmployeeCard from './employee/EmployeeCard'

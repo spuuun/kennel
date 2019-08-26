@@ -21,11 +21,13 @@ class AnimalList extends Component {
     }
 
     render() {
-        console.log("ANIMAL LIST: Render");
+        console.log("AnimalList: Render");
 
         return (
             <div className="container-cards">
-                {this.state.animals.map(animal => <AnimalCard />)}
+                {this.state.animals.map(animal =>
+                    <AnimalCard key={animal.id} animal={animal} />
+                )}
             </div>
         )
     }
