@@ -20,7 +20,7 @@ class EmployeeList extends Component {
             })
     }
 
-    deleteEmployee = id => {
+    fireEmployee = id => {
         EmployeeManager.delete(id)
             .then(() => {
                 EmployeeManager.getAll()
@@ -41,7 +41,7 @@ class EmployeeList extends Component {
                     <EmployeeCard
                         key={employee.id}
                         employee={employee}
-                        deleteEmployee={this.deleteEmployee}
+                        fireEmployee={this.fireEmployee}
                     />
                 )}
             </div>
