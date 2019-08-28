@@ -40,5 +40,22 @@
       "name": "Mr. BigBuy"
     }
   ],
-  "locations": []
+  "locations": [
+    {
+      "id": 1,
+      "locationName": "South Nashville"
+    },
+    {
+      "id": 2,
+      "locationName": "West Nashville"
+    },
+    {
+      "id": 3,
+      "locationName": "North Nashville"
+    },
+    {
+      "id": 4,
+      "locationName": "East Nashville"
+    }
+  ]
 }
