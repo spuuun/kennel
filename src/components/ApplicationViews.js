@@ -4,9 +4,12 @@ import Home from './home/Home'
 // import AnimalCard from './animal/AnimalCard'
 //only include these once they are built - previous practice exercise
 import LocationCard from './location/LocationCard'
-import EmployeeCard from './employee/EmployeeCard'
+import LocationList from './location/LocationList'
+// import EmployeeCard from './employee/EmployeeCard'
 import OwnerCard from './owner/OwnerCard'
+import OwnerList from './owner/OwnerList'
 import AnimalList from './animal/AnimalList'
+import EmployeeList from './employee/EmployeeList'
 import AnimalDetail from './animal/AnimalDetail'
 
 
@@ -26,10 +29,10 @@ class ApplicationViews extends Component {
                     return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
                 }} />
                 <Route path="/owner" render={(props) => {
-                    return <OwnerCard />
+                    return <OwnerList />
                 }} />
                 <Route path="/employee" render={(props) => {
-                    return <EmployeeCard />
+                    return <EmployeeList />
                 }} />
                 <Route path="/location" render={(props) => {
                     return <LocationCard />

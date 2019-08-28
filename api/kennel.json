@@ -15,5 +15,30 @@
       "name": "Esme",
       "breed": "Pitbull"
     }
-  ]
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jill",
+      "job": "job-haver"
+    },
+    {
+      "id": 2,
+      "name": "Jill",
+      "job": "job-haver"
+    },
+    {
+      "id": 3,
+      "name": "Jill",
+      "job": "job-haver"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "phone": 666,
+      "name": "Mr. BigBuy"
+    }
+  ],
+  "locations": []
 }
