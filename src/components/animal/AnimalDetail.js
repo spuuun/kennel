@@ -7,6 +7,7 @@ class AnimalDetail extends Component {
     state = {
         name: "",
         breed: "",
+        loadingStatus: true
     }
 
     componentDidMount() {
@@ -16,9 +17,17 @@ class AnimalDetail extends Component {
             .then((animal) => {
                 this.setState({
                     name: animal.name,
-                    breed: animal.breed
+                    breed: animal.breed,
+                    loadingStatus: false
                 });
             });
+    }
+
+    handleDelete = () => {
+        //invoke the delete function in AnimalManger and re-direct to the animal list.
+        this.setState({ loadingStatus: true })
+        AnimalManager.delete(this.props.animalId)
+            .then(() => this.props.history.push("/animals"))
     }
 
     render() {
@@ -30,6 +39,7 @@ class AnimalDetail extends Component {
                     <picture>
                         <img src={require('./dog.svg')} alt="My Dog" />
                     </picture>
+                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
                 </div>
             </div>
         );

@@ -6,6 +6,7 @@ class LocationDetail extends Component {
 
     state = {
         locationName: "",
+        loadingStatus: true
     }
 
     componentDidMount() {
@@ -14,9 +15,17 @@ class LocationDetail extends Component {
         LocationManager.get(this.props.locationId)
             .then((location) => {
                 this.setState({
-                    locationName: location.locationName
+                    locationName: location.locationName,
+                    loadingStatus: false
                 });
             })
+    }
+
+    handleDelete = () => {
+        //invoke the delete function in AnimalManger and re-direct to the animal list.
+        this.setState({ loadingStatus: true })
+        LocationManager.delete(this.props.locationId)
+            .then(() => this.props.history.push("/location"))
     }
 
     render() {
@@ -28,6 +37,7 @@ class LocationDetail extends Component {
                         <img src={require("./Blake_jacobsladder.jpg")} alt="Beautiful Location" />
                     </picture>
                     <h3><span style={{ color: 'darkslategrey' }}>{this.state.locationName}</span></h3>
+                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Close Location</button>
                 </div>
             </div>
         );
